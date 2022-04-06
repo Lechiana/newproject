@@ -1,7 +1,7 @@
-import { useGetAllBooksQuery } from "./component/Books";
+import { useGetBooksByIDQuery } from "./Books";
 
 function App() {
-  const { data, error, isLoading } = useGetAllBooksQuery();
+  const { data, error, isLoading } = useGetBooksByIDQuery();
 
   return (
     <div className="App">
@@ -28,15 +28,6 @@ function App() {
                     <p>ชื่อผู้แต่ง: {books.authors}</p>
                     <p>รหัส ISBN: {books.isbn}</p>
                     <p>{books.shortDescription}</p>
-                  </div>
-                  <div tabIndex={0} className="collapse">
-                    <input type="checkbox" className="peer" />
-                    <div className="collapse-title  text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-                      ดูเพิ่มเติม
-                    </div>
-                    <div className="collapse-content text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-                      <p>{books.longDescription}</p>
-                    </div>
                   </div>
                 </div>
               </div>
